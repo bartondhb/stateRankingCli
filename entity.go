@@ -1,8 +1,7 @@
 package main
 
 type Entity struct {
-	Name string
+	Name        string
 	DisplayName string
-	Population int64
+	Population  int64
 }
-

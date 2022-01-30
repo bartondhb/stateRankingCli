@@ -2,6 +2,7 @@ package main
 
 import "encoding/xml"
 
+// Recursive method of DivArray, will search through nested <div> tags until a matching ID field is found.
 func (da *DivArray) getById(id string) Div {
 
 	for _, d := range *da {
@@ -22,8 +23,8 @@ func (da *DivArray) getById(id string) Div {
 
 type HTML struct {
 	XMLName xml.Name `xml:"html"`
-	Head Head `xml:"head"`
-	Body Body `xml:"body"`
+	Head    Head     `xml:"head"`
+	Body    Body     `xml:"body"`
 }
 
 type Body struct {
@@ -31,11 +32,11 @@ type Body struct {
 }
 
 type Div struct {
-	AttrId string `xml:"id,attr"`
-	Div DivArray `xml:"div"`
-	H2 []H2 `xml:"h2"`
-	Table []Table `xml:"table"`
-	Value string`xml:",chardata"`
+	AttrId string   `xml:"id,attr"`
+	Div    DivArray `xml:"div"`
+	H2     []H2     `xml:"h2"`
+	Table  []Table  `xml:"table"`
+	Value  string   `xml:",chardata"`
 }
 
 type H2 struct {
@@ -44,9 +45,9 @@ type H2 struct {
 
 type Span struct {
 	Class string `xml:"class,attr"`
-	Id string `xml:"id,attr"`
+	Id    string `xml:"id,attr"`
 	Value string `xml:",chardata"`
-	A []A `xml:"a"`
+	A     []A    `xml:"a"`
 }
 
 type DivArray []Div
@@ -65,25 +66,24 @@ type TableBody struct {
 
 type Row struct {
 	HeaderData []TableHeader `xml:"th"`
-	Data []TableData `xml:"td"`
+	Data       []TableData   `xml:"td"`
 }
 
 type TableHeader struct {
-	Colspan int `xml:"colspan,attr"`
-	Rowspan int `xml:"rowspan,attr"`
-	Div Div `xml:"div"`
-	Value string `xml:",chardata"`
+	Colspan int    `xml:"colspan,attr"`
+	Rowspan int    `xml:"rowspan,attr"`
+	Div     Div    `xml:"div"`
+	Value   string `xml:",chardata"`
 }
 
 type TableData struct {
-	A []A `xml:"a"`
-	Span []Span `xml:"span"`
+	A     []A    `xml:"a"`
+	Span  []Span `xml:"span"`
 	Value string `xml:",chardata"`
 }
 
 type A struct {
-	Href string `xml:"href,attr"`
+	Href  string `xml:"href,attr"`
 	Title string `xml:"title,attr"`
 	Value string `xml:",chardata"`
 }
-

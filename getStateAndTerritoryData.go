@@ -11,7 +11,7 @@ import (
 
 func getStateAndTerritoryData(url string) ([]Entity, error) {
 
-	// Retrieve the data from the given url
+	// Retrieve the data from the supplied url
 	resp, err := http.Get(url)
 
 	if err != nil {
@@ -47,12 +47,12 @@ func getStateAndTerritoryData(url string) ([]Entity, error) {
 	var stateData []Entity
 
 	// Iterates through the Rows in the first Table of the first inner <div> of  the "mw-content-text" <div>
-	for _,v := range mydiv.Div[0].Table[0].Body.Row {
+	for _, v := range mydiv.Div[0].Table[0].Body.Row {
 
 		// Most states and territories in the table are handled by this code...
 		if len(v.Data) != 0 {
 
-			// If the third data element in the row contains an HTML Anchor...
+			// If the third data element in the row contains an HTML Anchor Tag...
 			if len(v.Data[2].A) != 0 {
 
 				// Get the name of the state from the Value of the first Anchor in the slice
@@ -87,12 +87,10 @@ func getStateAndTerritoryData(url string) ([]Entity, error) {
 				}
 			}
 
-
 		}
 
 	}
 
 	return stateData, nil
-
 
 }
