@@ -7,6 +7,18 @@ import (
 	"strings"
 )
 
+// Instructions for building and installing:
+//
+// 1) Clone Repository
+//
+// 		git clone https://github.com/bartondhb/stateRankingCli
+//
+// 2) Switch to the directory where the repo has been cloned
+// 3) Build the Executable
+//
+//		go build -o uspop .
+//
+// More detailed instructions are also available at https://github.com/bartondhb/stateRankingCli/blob/main/README.md
 func main() {
 
 	var summaryFlag = flag.Bool("summary", false, "Prints a summary of population data for all U.S. States and Territories")
