@@ -9,6 +9,8 @@ import (
 	"strings"
 )
 
+// getStateAndTerritoryData retrieves the population data from Wikipedia given the correct URL and parse the HTML as XML
+// to extract and create a slice of Entity objects containing data for each State and Territory.
 func getStateAndTerritoryData(url string) ([]Entity, error) {
 
 	// Retrieve the data from the supplied url

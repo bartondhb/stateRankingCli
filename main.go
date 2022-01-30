@@ -36,7 +36,7 @@ func main() {
 				err := populationByState(&data, v.Name)
 
 				if err != nil {
-					fmt.Printf("%e", err)
+					fmt.Printf("%s\n", err.Error())
 					os.Exit(1)
 				}
 
@@ -45,7 +45,7 @@ func main() {
 			err := populationByState(&data, strings.ToLower(*stateFlag))
 
 			if err != nil {
-				fmt.Printf("%e", err)
+				fmt.Printf("%s\n", err.Error())
 				os.Exit(1)
 			}
 		}
