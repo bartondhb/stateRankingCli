@@ -19,33 +19,33 @@ This command line tool allows the user to view and summarize U.S. State and Terr
 
 The `uspop` CLI accepts two flags:
 ```shell
--state string
+--state string
 
--summary
+--summary
 ```
 
 ### State Flag
 
-The `-state` flag is followed by the name of the state for which you want to retrieve population data. For example:
+The `--state` flag is followed by the name of the state for which you want to retrieve population data. For example:
 ```shell
--state california
+--state "new mexico"
 ```
-This will display the population for the state of California.
+This will display the population for the state of New Mexico.
 
 **_NOTE:_** This field is not case sensitive.
 
-Additionally, there are two other options that can be supplied with the `state` flag:
+Additionally, there are two other options that can be supplied with the `--state` flag:
 ```shell
--state list
--state all
+--state list
+--state all
 ```
 
-`-state list` will print an alphabetical list of all U.S. States and Territories.
+`--state list` will print an alphabetical list of all U.S. States and Territories.
 
-`-state all` will print the population of all U.S. States and Territories.
+`--state all` will print the population of all U.S. States and Territories.
 
 ### Summary Flag
-The `-summary` flag will print several summarized pieces of information about the U.S. Population including:
+The `--summary` flag will print several summarized pieces of information about the U.S. Population including:
 - Total Population
 - Mean Population
 - Media Population

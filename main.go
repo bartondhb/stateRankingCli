@@ -22,7 +22,7 @@ import (
 func main() {
 
 	var summaryFlag = flag.Bool("summary", false, "Prints a summary of population data for all U.S. States and Territories")
-	var stateFlag = flag.String("state", "", "Prints population of the specified state.\n\tExample:\n\t-state california\n\tPrints population of California\n\n\t-state list\n\tPrints an alphabetical list of all U.S. States and Territories\n\n\t-state all\n\tPrints the population of all states in the list.\n")
+	var stateFlag = flag.String("state", "", "Prints population of the specified state.\n\tExample:\n\t--state \"new mexico\"\n\tPrints population of New Mexico\n\n\t--state list\n\tPrints an alphabetical list of all U.S. States and Territories\n\n\t--state all\n\tPrints the population of all states in the list.\n")
 	flag.Parse()
 
 	sourceUrl := "https://en.wikipedia.org/wiki/List_of_U.S._states_and_territories_by_population"
